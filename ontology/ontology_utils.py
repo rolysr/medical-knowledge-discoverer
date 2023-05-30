@@ -1,5 +1,6 @@
 import csv
-
+from pathlib import Path
+from utils.anntools import Collection
 
 class OntologyUtils:
     @staticmethod
@@ -26,3 +27,25 @@ class OntologyUtils:
         if isinstance(token, str) and token.startswith('\'') and token.endswith('\''):
             return token[1:-1]
         return token
+    
+    @staticmethod
+    def load_result():
+        path = Path('./datasets/train')
+        relations,keyphrases={},{}
+        collection = Collection().load_dir(path)
+        for sentence in collection.sentences:
+            for keyphrase in sentence.keyphrases:
+                text = keyphrase.text.lower()
+                keyphrases[text] = keyphrase.label
+
+        for sentence in collection.sentences:
+            for relation in sentence.relations:
+                origin = relation.from_phrase
+                origin_text = origin.text.lower()
+                destination = relation.to_phrase
+                destination_text = destination.text.lower()
+
+                relations[
+                    origin_text, origin.label, destination_text, destination.label
+                ] = relation.label.replace('-','_')
+        return relations, keyphrases

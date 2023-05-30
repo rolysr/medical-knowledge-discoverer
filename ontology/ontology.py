@@ -1,33 +1,90 @@
-from py2neo import Graph
-from ontology_utils import OntologyUtils
+import logging
 
+from neo4j import GraphDatabase
+from neo4j.exceptions import Neo4jError
+from .ontology_utils import OntologyUtils
 
 class Ontology:
-    """
-        Ontology class for the creation of a medical knowledge base
-    """
 
-    def __init__(self, url, password) -> None:
-        """
-            Class constructor. Receives the url and password parameters 
-            and starts an instance capable of interacting with a Neo4J-like database
-        """
-        self.db = self.db = Graph(url, password=password)
+    def __init__(self, uri, user, password):
+        self.driver = GraphDatabase.driver(uri, auth=(user, password))
 
-    def fill_db(self, path_to_ann_file):
-        """
-            Method that receives a path where a file with extension .ann 
-            is located and populate the database with the entities and relations in it
-        """
-        pass
+    def close(self):
+        # Don't forget to close the driver connection when you are finished with it
+        self.driver.close()
 
-    def make_query(self, query):
-        """
-            Method for sending a request to the database in
-            CYPHER graph query language
-        """
-        if OntologyUtils.not_valid_query(query):
-            raise Exception('Invalid query. Please, check the format')
-
-        return self.db.run(query).data()
+    def create_database(self):
+        relations, keyphrases = OntologyUtils.load_result()
+        with self.driver.session(database="neo4j") as session:
+            # Write transactions allow the driver to handle retries and transient errors
+            
+            for key,value in keyphrases.items():
+                result = session.execute_write(
+                    self.create_entity, value, key
+                    )
+            
+            for key,value in relations.items():
+                result = session.execute_write(
+                    self.create_relation, key[0], key[1], key[2], key[3], value
+                )
     
+    @staticmethod
+    def create_entity(tx, value, key):
+            if value == "Concept":
+                query =(
+                    "CREATE (w:Concept { text: $key }) "
+                    "RETURN w"
+                )
+            elif value == "Action":
+                query =(
+                    "CREATE (w:Action { text: $key }) "
+                    "RETURN w"
+                )
+            elif value == "Predicate":
+                query =(
+                    "CREATE (w:Predicate { text: $key }) "
+                    "RETURN w"
+                )
+            elif value == "Reference":
+                query =(
+                    "CREATE (w:Reference { text: $key }) "
+                    "RETURN w"
+                )
+            result = tx.run(query, value=value, key=key)
+    
+    @staticmethod 
+    def create_relation(tx, key0, key1, key2, key3, value):
+            query = (
+            "MATCH (p {text: $key0}), (r {text: $key2})"
+            "CREATE (p)-[: is_related {relation: $value}]->(r) " 
+            )
+            
+            result = tx.run(query, key0=key0, key1=key1, key2=key2, key3=key3, value=value)
+
+
+   
+    def delGraph(self):
+        with self.driver.session(database="neo4j") as session:
+            result = session.execute_write(
+                self.delGraph_static)
+    
+    @staticmethod
+    def delGraph_static(tx):
+        query = (
+            "MATCH (n)" 
+            "OPTIONAL MATCH (n) - [r] - () "
+            "DELETE n,r "
+        )
+        result = tx.run(query)
+         
+
+   
+
+# if __name__ == "__main__":
+#     # Aura queries use an encrypted connection using the "neo4j+s" URI scheme
+#     uri = "neo4j+s://8c1c0ab9.databases.neo4j.io"
+#     user = "neo4j"
+#     password = "F4yRbpbmrAS7ic79jwq-z-K_5gPnT7wa-LljmqnlLmA"
+#     app = App(uri, user, password)
+#     app.create_database()
+#     app.close()
