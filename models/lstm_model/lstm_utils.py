@@ -12,9 +12,9 @@ import networkx as nx
 import fasttext
 import re
 
-import es_core_news_sm, en_core_web_sm
+import es_core_news_lg, en_core_web_sm
 
-nlp_es = es_core_news_sm.load()
+nlp_es = es_core_news_lg.load()
 nlp_en = en_core_web_sm.load()
 
 # model for detecting the language of a sentence

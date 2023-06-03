@@ -25,7 +25,7 @@ class REClassifier(BaseClassifier):
     def __init__(self):
         BaseClassifier.__init__(self)
         self.path_encoder = LabelEncoder()
-        self.ScieloSku = fasttext.load_model("./models/lstm_model/clinic_es.bin")
+        self.ScieloSku = fasttext.load_model("./clinic_es.bin")
 
     def train(self, collection: Collection):
         """
