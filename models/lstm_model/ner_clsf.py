@@ -16,6 +16,8 @@ import numpy as np
 import time
 import json, pickle
 
+from rich.progress import track
+
 
 class NERClassifier(BaseClassifier):
     """Classifier for the name entity resolution task"""
@@ -117,11 +119,12 @@ class NERClassifier(BaseClassifier):
         
         x_shapes, x_char_shapes, yt_shapes, ye_shapes = train_by_shape(X, y_tags, y_entities,
                                                                                              X_char)
-        for shape in x_shapes:
+        for shape in track(x_shapes, description='training...'):
             self.model.fit(
                 (np.asarray(x_shapes[shape]), np.asarray(x_char_shapes[shape])),
                 (np.asarray(yt_shapes[shape]), np.asarray(ye_shapes[shape])),
-                epochs=10)
+                epochs=10,
+                verbose=0)
 
     def test_model(self, collection: Collection) -> Collection:
         collection = collection.clone()

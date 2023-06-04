@@ -50,22 +50,23 @@ mkdir -p $save
 
 # Copy project files to scratch
 echo "copying project............"
-cp -r /data/tsa/destevez/dennis/ML/medical-knowledge-discoverer/* $project
+cp -r /data/tsa/destevez/dennis/ML/medical-knowledge-discoverer/* "./medical-knowledge-discoverer"
 echo "end of copy"
 
 
 ######### RUN ##########
 
-cd $project
-echo "runing............"
-srun python3 $project/t5.py
+echo "runing training............"
+srun python3 ./medical-knowledge-discoverer/main.py t5-model -o "./output" -t "./datasets/train"
+# echo "runing evaluation............"
+# srun python3 ./medical-knowledge-discoverer/main.py main-eval -tr ... -tp "./datasets/train"
 echo "end of run"
 
 
 ########## SAVE ##########
 
 echo "saving............"
-cp -r $output $save
+cp -r "./output" $save
 echo "end of save"
 
 
