@@ -1,0 +1,1 @@
+# Modelo T5 aplicado a la tarea de extacción de relaciones (NER)
