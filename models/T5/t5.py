@@ -14,18 +14,18 @@ class T5:
     def __init__(self) -> None:
         self.model: SimpleT5 = None
 
-    def get_marked_sentence_t5_input_format(self, sentence: str, ent1: str, label1: str, ent2: str, label2: str):
+    def get_marked_sentence_t5_input_format(sentence: str, ent1: str, label1: str, ent2: str, label2: str):
         new_sentence: str = copy(sentence)
         new_sentence = new_sentence.replace(ent1, "<{0}1>{1}</{0}1>".format(label1, ent1))
         new_sentence = new_sentence.replace(ent2, "<{0}2>{1}</{0}2>".format(label2, ent2))
         return new_sentence
 
 
-    def get_t5_output_format(self, ent1, label1, ent2, label2, relation_label):
+    def get_t5_output_format(ent1, label1, ent2, label2, relation_label):
         return relation_label + "({}, {})".format(label1+"1", label2+"2")
 
 
-    def generate_t5_input_output_format(self, collection: Collection):
+    def generate_t5_input_output_format(collection: Collection):
         dataset = []
         for sentence in collection.sentences:
             for relation in sentence.relations:
@@ -35,8 +35,8 @@ class T5:
                 destination_text: str = destination.text.lower()
 
                 #making the pair
-                input_text = self.get_marked_sentence_t5_input_format(sentence.text, origin_text, origin.label, destination_text, destination.label)
-                output_text = self.get_t5_output_format(origin_text, origin.label, destination_text, destination.label, relation.label)
+                input_text = T5.get_marked_sentence_t5_input_format(sentence.text, origin_text, origin.label, destination_text, destination.label)
+                output_text = T5.get_t5_output_format(origin_text, origin.label, destination_text, destination.label, relation.label)
                 dataset.append((input_text, output_text))
         return dataset
     
@@ -49,8 +49,8 @@ class T5:
             writer = csv.writer(file)
             writer.writerow(["input", "output"])
             for data in dataset:
-                input = str(data[0])
-                output = str(data[1])
+                input = data[0].encode('utf-8').strip()
+                output = data[1].encode('utf-8').strip()
                 writer.writerow([input, output])
 
 
