@@ -10,8 +10,8 @@ from models.NER.ner import NER
 import utils.score as score
 from utils.anntools import Collection
 from models.lstm_model.classifier import Classifier
-# from ontology.ontology import Ontology
-# from ontology.ontology_utils import *
+from ontology.ontology import Ontology
+from ontology.ontology_utils import *
 
 
 
@@ -42,6 +42,7 @@ def lstm(
 
 @app.command()
 def neo4j(
+    
 
 ):
     # Importante: no correr este codigo sin limpiar antes la base de datos en Neo4j pues se crearian doble los nodos y las relaciones
@@ -54,6 +55,16 @@ def neo4j(
     # # app.delGraph()
     # app.close()
     ...
+
+    # Mostrar ejemplo: causas de covid-19
+    uri = "neo4j+s://8c1c0ab9.databases.neo4j.io"
+    user = "neo4j"
+    password = "F4yRbpbmrAS7ic79jwq-z-K_5gPnT7wa-LljmqnlLmA"
+    app = Ontology(uri, user, password)
+    # app.create_database()
+    enfermedad = 'covid-19'
+    app.findQuery(enfermedad)
+    app.close()
 
 
 

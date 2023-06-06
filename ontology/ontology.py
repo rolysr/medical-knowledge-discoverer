@@ -76,6 +76,23 @@ class Ontology:
             "DELETE n,r "
         )
         result = tx.run(query)
+    
+    def findQuery(self, disease):
+         print(f"Las causas de {disease} son:")
+         with self.driver.session(database="neo4j") as session:
+              result = session.execute_read(
+                   self.makeQueryd, disease 
+              )
+              print(result)
+    
+    @staticmethod
+    def makeQueryd(tx, disease):
+        query =(
+              "MATCH p=(n{text: $disease})-[r{relation:'causes'}]->(d) RETURN d LIMIT 25"
+        )
+        result = tx.run(query, disease=disease)
+        listNode = [node for node in result]
+        return listNode
          
 
    
