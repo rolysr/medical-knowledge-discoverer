@@ -2,6 +2,7 @@ from langchain.llms import OpenAI
 from langchain import PromptTemplate, LLMChain
 from utils.anntools import Collection
 from pathlib import Path
+import pandas as pd
 
 
 class GPT3Model:
@@ -107,10 +108,10 @@ class GPT3Model:
     
     def run(self, test_dataset_path):
         collection = Collection().load_dir(Path(test_dataset_path))
-        C_A, C_B, P_A, I_A, M_A, M_B, S_A, S_B = 0, 0, 0, 0, 0, 0, 0
+        C_A, C_B, P_A, I_A, M_A, M_B, S_A, S_B = 0, 0, 0, 0, 0, 0, 0, 0
         sentence_counter = 0
 
-        for sentence in collection.sentences:
+        for sentence in collection.sentences[:50]:
             sentence_counter += 1
             print("Testing sentence {}".format(sentence_counter))
             # Name Entity Recognition (Task A)
@@ -118,14 +119,14 @@ class GPT3Model:
             keyphrases_gold = self._get_keyphrases_from_sentence(sentence)
             keyphrases_dev = self._extract_keyphrases(sentence.text)
             c_a, p_a, i_a, m_a, s_a = self._eval_keyphrases(keyphrases_gold, keyphrases_dev)
-            C_A, P_A, I_A, M_A, S_A += c_a, p_a, i_a, m_a, s_a
+            C_A, P_A, I_A, M_A, S_A = C_A + c_a, P_A + p_a, I_A + i_a, M_A + m_a, S_A + s_a
             
             # Relation Extraction (Task B)
             print("Task B for sentence {}".format(sentence_counter))
             relations_gold = self._get_relations_from_sentence(sentence)
             relations_dev = self._extract_relations(sentence.text, keyphrases_dev)
             c_b, m_b, s_b = self._eval_relations(relations_gold, relations_dev)
-            C_B, M_B, S_B += c_b, m_b, s_b
+            C_B, M_B, S_B = C_B + c_b, M_B + m_b, S_B + s_b
 
         # Main task results
         REC_AB = (C_A + C_B + P_A/2)/(C_A + I_A + C_B + P_A + M_A + M_B)
@@ -134,16 +135,32 @@ class GPT3Model:
         print("The results for Main Task are:\nREC_AB: {}\nPREC_AB: {}\nF1_AB: {}\n\n".format(REC_AB, PREC_AB, F1_AB))
 
         # Task A results
-        REC_AB = (C_A + C_B + P_A/2)/(C_A + I_A + C_B + P_A + M_A + M_B)
-        PREC_AB = (C_A + C_B + P_A/2)/(C_A + I_A + C_B + P_A + S_A + S_B)
-        F1_AB = 2*(PREC_AB*REC_AB)/(PREC_AB + REC_AB)
-        print("The results for Main Task are:\nREC_AB: {}\nPREC_AB: {}\nF1_AB: {}\n\n".format(REC_AB, PREC_AB, F1_AB))
+        REC_A = (C_A + P_A/2)/(C_A + I_A + P_A + M_A)
+        PREC_A = (C_A + P_A/2)/(C_A + I_A + P_A + S_A)
+        F1_A = 2*(PREC_A*REC_A)/(PREC_A + REC_A)
+        print("The results for Task A are:\nREC_A: {}\nPREC_A: {}\nF1_A: {}\n\n".format(REC_A, PREC_A, F1_A))
 
         # Task B results
-        REC_AB = (C_A + C_B + P_A/2)/(C_A + I_A + C_B + P_A + M_A + M_B)
-        PREC_AB = (C_A + C_B + P_A/2)/(C_A + I_A + C_B + P_A + S_A + S_B)
-        F1_AB = 2*(PREC_AB*REC_AB)/(PREC_AB + REC_AB)
-        print("The results for Main Task are:\nREC_AB: {}\nPREC_AB: {}\nF1_AB: {}\n\n".format(REC_AB, PREC_AB, F1_AB))
+        REC_B = (C_B)/(C_B + M_B)
+        PREC_B = (C_B)/(C_B + S_B)
+        F1_B = 2*(PREC_B*REC_B)/(PREC_B + REC_B)
+        print("The results for Task B are:\nREC_B: {}\nPREC_B: {}\nF1_B: {}".format(REC_B, PREC_B, F1_B))
+
+        # Write results into a .csv
+        data = {
+            'REC_AB': [REC_AB],
+            'PREC_AB': [PREC_AB],
+            'F1_AB': [F1_AB],
+            'REC_A': [REC_A],
+            'PREC_A': [PREC_A],
+            'F1_A': [F1_A],
+            'REC_B': [REC_B],
+            'PREC_B': [PREC_B],
+            'F1_B': [F1_B],
+        }
+        df = pd.DataFrame(data)
+        df.to_csv('./gpt3_results.csv')
+
 
 
     def _eval_keyphrases(self, gold, dev):

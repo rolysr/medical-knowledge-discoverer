@@ -7,3 +7,5 @@ from models.gpt3_model.gpt3_model import GPT3Model
 # print(k,'\n')
 # print(r)
 
+model = GPT3Model()
+model.run('./datasets/test/scenario1-main')
