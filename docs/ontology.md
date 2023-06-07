@@ -1,4 +1,4 @@
-# Informe ML
+# Ontología
 
 En nuestro proyecto una vez obtenido todo el conociemto de los documentos guardamos los datos en una base de datos orientada a grafos.
 
