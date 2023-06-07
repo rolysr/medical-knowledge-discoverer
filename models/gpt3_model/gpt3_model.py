@@ -8,7 +8,7 @@ import pandas as pd
 class GPT3Model:
     """GPT3 LLM for Name Entity Recognition and Relation Extraction Tasks"""
     def __init__(self) -> None:
-        self.llm = OpenAI(temperature=0.5)
+        self.llm = OpenAI(temperature=0.3)
 
     def _extract_keyphrases(self, sentence):
         template = """Your task is to act as a participant from eHealth-KD competition. You are given a sentencen and you must\
@@ -167,6 +167,7 @@ class GPT3Model:
         c_a, p_a, i_a, m_a, s_a = 0, 0, 0, 0, 0
         keyphrases_gold = gold.keys()
         keyphrases_dev = dev.keys()
+        marked_gold = {keyphrase: False for keyphrase in keyphrases_gold}
 
         # c_a, i_a, s_a, p_a
         for k in keyphrases_dev:
@@ -175,11 +176,12 @@ class GPT3Model:
                     c_a += 1
                 else:
                     i_a += 1
+
+            elif self._is_partial_match(k, keyphrases_gold, marked_gold):
+                p_a += 1
+
             else:
                 s_a += 1
-            for kg in keyphrases_gold:
-                if self._is_non_empty_interceptio_keyphrases(k, kg):
-                    p_a += 1
 
         # m_a
         for k in keyphrases_gold:
@@ -188,8 +190,12 @@ class GPT3Model:
         
         return c_a, p_a, i_a, m_a, s_a
 
-    def _is_non_empty_interceptio_keyphrases(self, k, kg):
-        return (k in kg) or  (kg in k)
+    def _is_partial_match(self, k, keyphrases_gold, marked_gold):
+        for kg in keyphrases_gold:
+            if (k in kg) and not marked_gold[kg]:
+                marked_gold[kg] = True
+                return True
+        return False
 
     def _eval_relations(self, gold, dev):
         c_b, m_b, s_b = 0, 0, 0
