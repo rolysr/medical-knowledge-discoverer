@@ -1879,7 +1879,7 @@ R858	is-a Arg1:T933 Arg2:T930
 R859	is-a Arg1:T934 Arg2:T930
 R860	is-a Arg1:T935 Arg2:T930
 R861	is-a Arg1:T936 Arg2:T930
-T943	Predicate 16839 16844	numbe
+T943	Predicate 16839 16844	number
 T944	Concept 16849 16861	hospitalised
 T945	Concept 16862 16870	COVID-19
 T946	Concept 16871 16876	cases
