@@ -23,19 +23,19 @@ Los resultados preliminares muestran que GPT3 combinado con LangChain puede ser 
 Es importante destacar que GPT3 y LangChain no son herramientas específicas para el procesamiento de textos médicos. A pesar de esto, mostraron un rendimiento prometedor en la tarea de eHealth-KD, lo que sugiere que estas herramientas pueden ser muy útiles para aplicaciones de procesamiento de lenguaje natural en el campo de la medicina.
 
 ### Resultados para la Tarea principal:
-REC_AB: 0.19602977667493796
-PREC_AB: 0.29699248120300753
-F1_AB: 0.23617339312406577
+- REC_AB: 0.19602977667493796
+- PREC_AB: 0.29699248120300753
+- F1_AB: 0.23617339312406577
 
 ### Resultados para la Tarea A (NER):
-REC_A: 0.324455205811138
-PREC_A: 0.4174454828660436
-F1_A: 0.3651226158038147
+- REC_A: 0.324455205811138
+- PREC_A: 0.4174454828660436
+- F1_A: 0.3651226158038147
 
 ### Resultados para la Tarea B (RE):
-REC_B: 0.061068702290076333
-PREC_B: 0.11374407582938388
-F1_B: 0.07947019867549668
+- REC_B: 0.061068702290076333
+- PREC_B: 0.11374407582938388
+- F1_B: 0.07947019867549668
 
 ## Conclusión
 

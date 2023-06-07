@@ -7,15 +7,15 @@ La clasificación del esquema de etiquetas BILOUV corresponde a Begin, para el i
 Teniendo en cuenta las características multilingües de la tarea, el proceso de extracción de características de las características sintácticas se maneja en dos fases. En la primera, la oración de entrada se clasifica por su idioma utilizando un modelo preentrenado de FastText para la identificación del idioma [3][2]. Posteriormente, en la segunda fase, se utilizaron dos modelos diferentes de Spacy (https://spacy.io/) dependiendo del idioma de la oración (es core news sm para español y en core web sm para inglés). Estos modelos se utilizaron para extraer características como la etiqueta POS, el árbol de análisis de dependencia y la etiqueta de dependencia.
 
 ## Resultados:
-scenario1_f1:0.33343789209535757
-scenario1_precision:0.36909722222222224
-scenario1_recall:0.3040617848970252
-scenario1_best:run2
-scenario2_f1:0.5598455598455597
-scenario2_precision:0.5583058305830583
-scenario2_recall:0.5613938053097345
-scenario2_best:run2
-scenario3_f1:0.04381846635367762
-scenario3_precision:0.06451612903225806
-scenario3_recall:0.03317535545023697
-scenario3_best:run2
+- scenario1_f1:0.33343789209535757
+- scenario1_precision:0.36909722222222224
+- scenario1_recall:0.3040617848970252
+- scenario1_best:run2
+- scenario2_f1:0.5598455598455597
+- scenario2_precision:0.5583058305830583
+- scenario2_recall:0.5613938053097345
+- scenario2_best:run2
+- scenario3_f1:0.04381846635367762
+- scenario3_precision:0.06451612903225806
+- scenario3_recall:0.03317535545023697
+- scenario3_best:run2
