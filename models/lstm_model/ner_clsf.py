@@ -28,6 +28,7 @@ class NERClassifier(BaseClassifier):
         self.n_entities = 4
         self.encoder_tags = LabelEncoder()
         self.encoder_entities = LabelEncoder()
+        self.history = None
 
     def train(self, collection: Collection):
         """
@@ -119,8 +120,8 @@ class NERClassifier(BaseClassifier):
         
         x_shapes, x_char_shapes, yt_shapes, ye_shapes = train_by_shape(X, y_tags, y_entities,
                                                                                              X_char)
-        for shape in track(x_shapes, description='training...'):
-            self.model.fit(
+        for shape in track(x_shapes, description='Training NER...'):
+            self.history = self.model.fit(
                 (np.asarray(x_shapes[shape]), np.asarray(x_char_shapes[shape])),
                 (np.asarray(yt_shapes[shape]), np.asarray(ye_shapes[shape])),
                 epochs=10,
