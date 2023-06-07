@@ -18,6 +18,7 @@ import numpy as np
 import fasttext
 import time
 
+from rich.progress import track
 
 class REClassifier(BaseClassifier):
     """Classifier for the relation extraction task"""
@@ -26,6 +27,7 @@ class REClassifier(BaseClassifier):
         BaseClassifier.__init__(self)
         self.path_encoder = LabelEncoder()
         self.ScieloSku = fasttext.load_model("./clinic_es.bin")
+        self.history = None
 
     def train(self, collection: Collection):
         """
@@ -137,11 +139,12 @@ class REClassifier(BaseClassifier):
     
         # self.model.fit(self.generator(X, y), steps_per_epoch=steps_per_epoch, epochs=5)
         x_shapes, x_dep_shapes, my_embedding_shapes, y_shapes = train_by_shape(X, X_feat, y, my_embedding)
-        for shape in x_shapes:
-            self.model.fit(
+        for shape in track(x_shapes, description='Training RE...'):
+            self.history = self.model.fit(
                 (np.asarray(x_shapes[shape]), np.asarray(x_dep_shapes[shape]), np.asarray(my_embedding_shapes[shape])),
                 np.asarray(y_shapes[shape]),
-                epochs=10)
+                epochs=10,
+                verbose=0)
 
     def test_model(self, collection: Collection) -> Collection:
         features, path_features, my_embedding = self.get_features(collection)
