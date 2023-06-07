@@ -10,6 +10,6 @@ El modelo T5 (Text-to-Text Transfer Transformer) es una variante del modelo Tran
 Para abordar la tarea de Extracción de Relaciones, decidimos entrenar el modelo T5 de una forma específica. Dada una oración, generamos un conjunto de oraciones de entrenamiento. Para cada par de entidades posible en la oración, proporcionamos al modelo T5 la oración con el par marcado, y la salida es el tipo de relación. De esta manera, el modelo es entrenado para predecir el tipo de relación entre dos entidades dadas, basándose en el contexto de la oración.
 
 ## Resultados
-Precision: 0.6327014218009479
-Recall: 0.6327014218009479
-F1 score: 0.6327014218009479
+- Precision: 0.6327014218009479
+- Recall: 0.6327014218009479 
+- F1 score: 0.6327014218009479
