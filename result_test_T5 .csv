@@ -1,0 +1,905 @@
+input,output
+glóbulos blancos,Concept
+ayudan,Action
+organismo,Concept
+combatir,Action
+infecciones,Action
+Se,Reference
+contagia,Action
+relaciones sexuales,Action
+persona,Concept
+infectada,Action
+lágrimas,Concept
+producidas,Action
+glándulas lagrimales,Concept
+conducto lagrimal,Concept
+lleva,Action
+estas,Reference
+lágrimas,Concept
+ojos,Concept
+frecuencia,Concept
+adolescentes,Concept
+reciben,Action
+cuidados,Action
+prenatales,Concept
+tiempo,Concept
+problemas,Action
+posteriores,Concept
+Phage-mediated,Concept
+horizontal,Concept
+gene,Concept
+transfer,Action
+events,Concept
+spread,Action
+novel,Concept
+functions,Concept
+development,Action
+pathogenicity,Concept
+bacterial,Concept
+strains,Concept
+Escherichia coli,Concept
+Vibrio cholerae,Concept
+Streptococcus,Concept
+pyogenes,Concept
+Staphylococcus,Concept
+aureus,Concept
+strains,Concept
+persona,Concept
+activo sexualmente,Concept
+VPH,Concept
+riesgo,Predicate
+parejas sexuales,Concept
+gluten,Concept
+proteína,Concept
+trigo,Concept
+cebada,Action
+centeno,Concept
+mayoría,Predicate
+lugares,Concept
+Estados Unidos,Concept
+pruebas,Concept
+hasta,Concept
+fecha,Action
+realizado,Action
+personas,Concept
+sintomáticas,Concept
+antecedentes,Concept
+viajes,Concept
+Wuhan,Concept
+contacto,Action
+cercano,Concept
+dichas,Predicate
+personas,Concept
+virus,Concept
+corresponde,Action
+tipo,Concept
+coronavirus,Concept
+conocido,Action
+anterioridad,Concept
+seres humanos,Concept
+SARS-CoV,Concept
+depend,Action
+extracellular,Concept
+intracellular,Concept
+Ca 2+,Concept
+pools,Concept
+successful,Concept
+infection,Action
+Ca 2+,Concept
+interactions,Action
+SARS-CoV,Concept
+FP,Concept
+Algunas,Reference
+personas,Concept
+experimentar,Action
+síntomas,Concept
+baja,Action
+presión,Concept
+ponen de pie,Concept
+rápidamente,Concept
+experimental,Concept
+data,Concept
+SARS-CoV,Concept
+protease inhibitors,Concept
+training,Concept
+set,Concept
+generate,Action
+inhibitors,Concept
+2019-nCoV,Concept
+protease,Concept
+Killer,Concept
+toxin,Concept
+encoded,Action
+pGKL,Concept
+plasmids,Concept
+translated,Action
+cap-independent,Concept
+pathway,Concept
+S protein,Concept
+SARS-CoV,Concept
+small,Concept
+domain,Concept
+residues 306-575,Concept
+receptor binding domain,Concept
+RBD,Concept
+residues 424-494,Concept
+receptor binding motif,Concept
+RBM,Concept
+directly,Concept
+mediate,Action
+interaction,Action
+ACE2,Concept
+22 de enero de 2020,Concept
+gobierno,Concept
+chino,Concept
+declaró,Action
+cuarentena,Action
+ciudades,Concept
+Wuhan,Concept
+Huanggang,Concept
+Ezhou,Concept
+intento,Action
+contener,Action
+diseminación,Action
+brote,Concept
+viral,Concept
+problemas,Action
+ocasionales,Concept
+función sexual,Concept
+comunes,Concept
+Consistent,Concept
+role,Concept
+DUSP1,Concept
+dephosphorylation,Action
+JNK,Concept
+p38,Concept
+increase,Action
+JNK,Concept
+p38,Concept
+phosphorylation,Action
+absence,Action
+DUSP1,Concept
+SeV,Concept
+RSV,Concept
+infection,Action
+vacuna,Concept
+fabricando,Action
+probarse,Action
+primero,Concept
+animales,Concept
+Inicialmente,Concept
+virus,Concept
+llamado,Action
+2019-nCoV,Concept
+2019-novel coronavirus,Concept
+allele 60,Concept
+founder,Concept
+PWK/PhJ,Concept
+driver,Action
+SARS-CoV,Concept
+titer,Concept
+lung,Concept
+ondas sonoras,Concept
+entran,Action
+oído externo,Concept
+nariz,Concept
+células nerviosas,Concept
+ayudan,Action
+sentido del olfato,Concept
+suministro,Action
+agua,Concept
+contaminada,Action
+infecciones,Action
+giardias,Concept
+enfermedades,Concept
+garrapatas,Concept
+mundo,Concept
+jardines,Concept
+SARS-CoV-2,Concept
+coronavirus,Concept
+positive-sense,Concept
+singlestranded,Concept
+RNA,Concept
+30kb,Concept
+length,Concept
+N-terminal regions,Concept
+S proteins,Concept
+differences,Concept
+Estos,Reference
+medicamentos,Concept
+pastillas,Concept
+líquidos,Concept
+parches,Concept
+C-terminal domain,Concept
+XP,Concept
+membrane permeabilization,Concept
+features,Concept
+viroporin,Concept
+informa,Concept
+caso,Concept
+período,Concept
+incubación,Action
+27 días,Concept
+2019-nCoV,Concept
+genome,Concept
+exhibits,Concept
+similarity,Concept
+2002 SARS-CoV,Concept
+genome,Concept
+proteome,Concept
+many,Concept
+interactions,Action
+SARS,Concept
+proteome,Concept
+2019-nCoV,Concept
+proteome,Concept
+binding sites,Concept
+affected,Action
+Estados Unidos,Concept
+niega,Action
+entrada,Action
+estadounidenses,Concept
+viajado,Action
+China,Concept
+dos,Concept
+semanas,Concept
+anteriores,Concept
+A partir,Concept
+17 de marzo de 2020,Concept
+todos,Predicate
+países,Concept
+Europa,Concept
+informado,Action
+caso,Concept
+COVID-19,Concept
+Montenegro,Concept
+último,Concept
+18 países,Concept
+informado,Action
+muerte,Concept
+SARS-CoV,Concept
+same,Concept
+receptor,Concept
+detected,Action
+skeletal muscle,Concept
+post-mortem,Concept
+examination,Action
+12 de mayo de 2013,Concept
+Ministerio de Asuntos Sociales y Sanidad,Concept
+francés,Concept
+confirmó,Action
+existencia,Action
+caso,Concept
+secundario,Concept
+varón,Concept
+previamente,Concept
+hospitalizado,Concept
+misma,Concept
+sala,Concept
+primer,Concept
+paciente,Concept
+Investigadores,Concept
+Universidad de Utrecht,Concept
+Erasmus MC,Concept
+anunciaron,Action
+encontraron,Action
+anticuerpo,Concept
+monoclonal,Concept
+humano,Concept
+bloquea,Action
+infección,Action
+SARS-CoV-2,Concept
+homopolymeric stretch,Concept
+5' adenosine nucleotides,Concept
+destabilize,Action
+eIF4E binding,Concept
+mRNA,Concept
+cap,Concept
+half,Concept
+patients,Concept
+increased,Action
+levels,Concept
+LDH,Concept
+one-third,Concept
+patients,Concept
+liver,Concept
+injury,Action
+decreased,Action
+levels,Concept
+prealbumin,Concept
+afectados,Action
+contacto,Action
+alguna,Reference
+forma,Action
+murciélagos,Concept
+excrementos,Concept
+contrayendo,Action
+esta,Reference
+forma,Action
+virus,Concept
+SARS-Cov,Concept
+closest,Concept
+virus,Concept
+2019-nCoV,Concept
+epitopes,Concept
+defined,Action
+humans,Concept
+other,Concept
+species,Concept
+human disease,Concept
+lethal,Concept
+drogas,Concept
+problema,Action
+salud pública,Concept
+afecta,Action
+comunidades,Concept
+familias,Concept
+informaron,Action
+escasez,Action
+ciertos,Concept
+productos,Concept
+básicos,Concept
+hogar,Concept
+common,Concept
+systemic,Concept
+symptoms,Concept
+COVID-19,Concept
+fever,Concept
+fatigue,Concept
+sputum,Concept
+myalgia,Concept
+obesidad,Concept
+presenta,Action
+transcurso,Action
+tiempo,Concept
+ingieren,Action
+más,Predicate
+calorías,Concept
+que,Action
+aquellas,Reference
+consume,Action
+hollín,Concept
+cubierto,Concept
+savia,Concept
+vuela,Concept
+aire,Concept
+penetrar,Action
+ojos,Concept
+nariz,Concept
+garganta,Concept
+sistema respiratorio,Concept
+comienzo,Action
+tratamiento,Action
+torceduras,Action
+distensiones,Concept
+reposo,Concept
+área,Concept
+afectada,Action
+hielo,Concept
+vendas,Concept
+compresión,Concept
+área,Concept
+medicinas,Concept
+pérdida,Action
+células cerebrales,Concept
+sufre,Action
+derrame cerebral,Concept
+afectar,Action
+capacidad,Concept
+pensar,Action
+claridad,Concept
+EVC,Concept
+EVC2,Concept
+paralogs,Concept
+EVC3.1,Concept
+EVC3.2,Concept
+choanoflagellate,Concept
+sea anenome,Concept
+sea urchin ciliomes,Concept
+detección,Action
+virus,Concept
+utilizar,Action
+muestras,Concept
+esputo,Concept
+secreción,Action
+nasofaringea,Concept
+official,Concept
+data,Concept
+diffusion,Action
+SARS-CoV-2,Concept
+responsible of,Action
+disease,Concept
+COIVD-19,Concept
+suffer,Action
+strong,Concept
+downward,Concept
+bias,Concept
+Superposition,Concept
+elongation complexes,Concept
+poliovirus 23,Concept
+norovirus 24,Concept
+SARS-CoV NSP12,Concept
+reveals,Action
+path,Concept
+RNA,Concept
+active site,Concept
+indicates,Action
+amino acids,Concept
+binding,Action
+catalysis,Action
+superspreading,Action
+unlikely,Concept
+control,Action
+COVID-19,Concept
+outbreak,Concept
+reducing,Action
+reproduction,Action
+number,Concept
+below,Concept
+unity,Concept
+2019-nCoV,Concept
+arose,Action
+recombination,Action
+clade 1,Concept
+other,Concept
+clades,Concept
+rapid,Concept
+diagnosis,Action
+isolation,Action
+infections,Action
+COVID-19,Concept
+alone,Concept
+control,Action
+outbreaks,Concept
+SARS-CoV-2,Concept
+tracing,Action
+isolation,Action
+traced,Action
+cases,Concept
+off-diagonal,Concept
+numbers,Concept
+genes,Concept
+differential,Concept
+expression,Concept
+two,Concept
+viruses,Concept
+compared,Action
+mock,Concept
+third,Concept
+virus,Concept
+tarde,Concept
+23 enero,Concept
+autoridades,Concept
+empezaron,Action
+cerrar,Action
+algunas,Reference
+carreteras,Concept
+importantes,Concept
+salen,Action
+Wuhan,Concept
+MSIR model,Concept
+predicts,Action
+earlier,Concept
+higher,Concept
+infectious,Concept
+peak,Concept
+position,Concept
+MSEIR mode,Concept
+26 de enero,Concept
+primer,Concept
+caso,Concept
+sospechoso,Concept
+COVID-19,Concept
+ingresado,Action
+Hospital,Concept
+Kaiser Franz Josef,Concept
+Viena,Concept
+tratamientos,Concept
+medicamentos,Concept
+cirugía,Concept
+tecnologías de reproducción asistida,Concept
+Lymphopenia,Concept
+effective,Concept
+reliable,Concept
+indicator,Action
+severity,Concept
+hospitalization,Concept
+COVID-19,Concept
+patients,Concept
+mobility,Concept
+reduction,Action
+effectively,Concept
+lower,Concept
+incidence rate,Concept
+50%,Concept
+transmissibility,Concept
+reduction,Action
+prevent,Action
+epidemics,Concept
+spreading,Action
+antibodies,Concept
+SARS-CoV-2,Concept
+specific,Concept
+sensitive,Concept
+detection,Action
+faster,Concept
+simpler,Concept
+RT-PCR,Concept
+rapid,Concept
+screening,Action
+suspect,Concept
+cases,Concept
+producido,Action
+casos,Concept
+personal,Concept
+sanitario,Concept
+atendía,Concept
+pacientes,Concept
+Pequeñas,Concept
+cantidades,Predicate
+orina,Concept
+fluyen,Action
+uréteres,Concept
+vejiga,Concept
+cada,Reference
+10,Concept
+15,Concept
+segundos,Concept
+Hasta,Reference
+15 de marzo,Concept
+naciones,Concept
+millón,Concept
+ciudadanos,Concept
+Suiza,Action
+segunda,Concept
+tasa,Concept
+más,Predicate
+alta,Concept
+mundo,Concept
+casos,Concept
+positivos,Concept
+coronavirus,Concept
+per cápita,Concept
+256.2 casos,Concept
+por,Concept
+millón,Concept
+personas,Concept
+activation,Action
+interferon-MAPK,Concept
+signaling pathway,Concept
+TCR,Concept
+BCR,Concept
+antibodies,Concept
+combating,Action
+SARS-CoV-2,Concept
+infection,Action
+Departamento de Salud Pública de California,Concept
+dijo,Concept
+esto,Reference
+representar,Action
+primera,Concept
+transmisión,Action
+comunitaria,Concept
+condado,Action
+specimens,Concept
+both,Concept
+spread,Action
+holes,Concept
+cryoEM grids,Concept
+common,Concept
+respiratory,Concept
+pathogen,Concept
+influenza,Concept
+parainfluenza,Concept
+viruses,Concept
+RSV,Concept
+ADV,Concept
+MP,Concept
+CP,Concept
+previous,Concept
+emerging,Concept
+novel,Concept
+coronaviruses,Concept
+SARS-CoV,Concept
+MERS-CoV,Concept
+isolated,Action
+body,Concept
+fluids,Concept
+secretions,Concept
+infected,Action
+patients,Concept
+related,Concept
+treatment,Action
+management,Concept
+implemented,Action
+first place,Concept
+respiratory,Concept
+hygiene,Concept
+measures,Concept
+facemask,Concept
+cost-effective,Concept
+important,Concept
+measures,Concept
+transmission,Action
+SARS-CoV-2,Concept
+investigando,Action
+uso,Action
+donaciones,Action
+sangre,Concept
+personas,Concept
+sanas,Concept
+recuperado,Action
+COVID-19,Concept
+estrategia,Concept
+probado,Action
+SARS,Concept
+primo,Concept
+anterior,Concept
+COVID-19,Concept
+Centro Chino para el Control y Prevención de Enfermedades,Concept
+CCDC,Concept
+comenzado,Action
+desarrollar,Action
+vacunas,Concept
+nuevo,Concept
+coronavirus,Concept
+probando,Action
+efectividad,Concept
+medicamentos,Concept
+neumonía,Concept
+need,Concept
+fetal,Concept
+monitoring,Action
+serial ultrasound,Concept
+women,Concept
+COVID-19,Concept
+S proteins,Concept
+similar,Concept
+folding pattern,Concept
+SARS-CoV S,Concept
+S1,Concept
+S2,Concept
+domains,Concept
+uniform,Concept
+organization,Concept
+2019-nCoV,Concept
+SARS-CoV,Concept
+Sarbecovirus,Concept
+related,Concept
+sequence identity,Concept
+79.6%,Predicate
+whole-genome level 5,Concept
+casos,Concept
+graves,Concept
+diverticulitis,Concept
+sangrado,Concept
+desgarres,Action
+obstrucciones,Concept
+Corea,Concept
+único,Concept
+país,Concept
+realizaron,Action
+análisis,Action
+sistemáticos,Concept
+grandes,Concept
+conjuntos,Concept
+población,Concept
+10 000,Concept
+al,Reference
+día,Concept
+210 000,Predicate
+contabilizados,Action
+hasta,Concept
+10 de marzo,Concept
+2019-nCoV,Concept
+3D model,Concept
+2019-nCoV,Concept
+similar,Concept
+receptor-binding domain,Concept
+RBD,Concept
+SARS-CoV,Concept
+enfermedad inflamatoria pélvica,Concept
+EIP,Concept
+infección,Action
+inflamación,Action
+útero,Concept
+ovarios,Concept
+otros,Reference
+órganos reproductivos femeninos,Concept
+fuente,Action
+virus,Concept
+animal,Concept
+SARS-CoV,Concept
+virus-like,Concept
+particles,Concept
+VLPs,Concept
+formation,Action
+depend,Action
+E proteins,Concept
+N proteins,Concept
+influenza,Concept
+data,Concept
+affected,Action
+smaller,Concept
+look-back windows,Concept
+hombre,Concept
+70 años,Concept
+cantón,Concept
+habla,Action
+italiana,Concept
+Ticino,Concept
+limita,Action
+Italia,Concept
+dio,Concept
+positivo,Concept
+SARS-CoV-2,Concept
+laringe,Concept
+cuerdas vocales,Concept
+dos,Concept
+bandas,Concept
+musculares,Concept
+vibran,Action
+emitir,Action
+sonidos,Concept
+ocultado,Concept
+brote,Concept
+hasta,Concept
+alcanzó,Concept
+escala,Concept
+internacional,Concept
+dos,Concept
+importantes,Concept
+funcionarios,Concept
+chinos,Concept
+destituidos,Concept
+sistemas,Concept
+adaptando,Action
+mejorar,Action
+divulgación,Action
+control,Action
+crisis,Concept
+SARS,Concept
+CD147,Concept
+facilitating,Action
+SARS-CoV,Concept
+invasion,Action
+host cells,Concept
+CD147-antagonistic peptide-9,Concept
+high,Concept
+binding rate,Concept
+HEK293 cells,Concept
+inhibitory,Concept
+SARS-CoV,Concept
+shock anafiláctico,Concept
+reacción alérgica,Concept
+grave,Concept
+picadura,Action
+insecto,Concept
+persona,Concept
+alérgica,Concept
+él,Reference
+mathematical,Concept
+model,Concept
+estimated,Concept
+SARS-CoV-2-designed,Concept
+panel,Concept
+detect,Action
+1.15,Concept
+copies,Concept
+virus,Concept
+95%,Predicate
+probability,Concept
+killer,Concept
+virus,Concept
+satellite RNA,Concept
+L-A,Concept
+L-A proteins,Concept
+replication,Action
+COVID-19,Concept
+duration,Concept
+transmissibility,Concept
+SARS-CoV-2,Concept
+asymptomatic carriers,Concept
+unknown,Concept
+confirmation,Concept
+delay,Action
+affect,Action
+infecting,Action
+process,Concept
+hinder,Action
+inspecting,Action
+real,Concept
+number,Concept
+confirmed,Concept
+cases,Concept
+SARS-CoV-2,Concept
+transmitted,Action
+vaginal sex,Concept
+convalescent,Concept
+plasma,Concept
+treatment,Action
+reduced,Action
+hospital,Concept
+stay,Action
+mortality,Concept
+patients,Concept
+SARS-CoV,Concept
+infection,Action
+severe,Concept
+influenza A,Concept
+H1N1,Concept
+concentrated,Concept
+sugar,Concept
+rare,Concept
+wild,Concept
+niches,Concept
+competition,Action
+fierce,Concept
+concentrations,Concept
+unlikely,Concept
+exceed,Action
+0.5%,Concept
+threshold,Concept
+sugar,Concept
+fermentation,Action
+co-crystal,Concept
+structure,Concept
+SARS-CoV NSP7,Concept
+SARS-CoV NSP8,Concept
+demonstrated,Action
+NSP8 C-terminal,Concept
+head domain,Concept
+folds,Concept
+around,Concept
+NSP7,Concept
+helical,Concept
+bundle,Concept
+specific,Concept
+regions,Concept
+2019-nCoV,Concept
+recognized,Action
+human,Concept
+immune,Concept
+responses,Concept
+These,Reference
+small,Concept
+changes,Action
+subunit structures,Concept
+larger,Concept
+shifts,Concept
+hexamer,Concept
+enfermedad,Concept
+arteria,Concept
+carótida,Concept
+síntomas,Concept
+estrechamiento,Action
+bloqueo,Action
+severo,Concept
+Comparing,Action
+SARS-CoV,Concept
+MERS,Concept
+2019-nCoV,Concept
+transmitted,Action
+human,Concept
+human,Concept
+spreading,Action
+multiple,Concept
+countries,Concept
+regions,Concept
+WHO,Concept
+declaration,Action
+Public,Concept
+Health,Concept
+Emergency,Concept
+International,Concept
+Concern,Action
+utilizado,Action
+COVID-19,Concept
+similitud,Concept
+dos enfermedades,Concept
+sequence identity,Concept
+between,Concept
+3CL proteases,Concept
+SARS-CoV,Concept
+2019-nCoV,Concept
+96.08%,Concept
