@@ -1,0 +1,6 @@
+\beamer@sectionintoc {2}{Objetivo}{2}{0}{1}
+\beamer@sectionintoc {3}{Data}{3}{0}{2}
+\beamer@sectionintoc {4}{Tareas}{4}{0}{3}
+\beamer@sectionintoc {5}{Modelos}{6}{0}{4}
+\beamer@sectionintoc {6}{Resultados}{10}{0}{5}
+\beamer@sectionintoc {7}{Ontolog\'ias}{13}{0}{6}
