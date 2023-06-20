@@ -150,10 +150,21 @@ aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which match
       %------------------------------------------------
      \begin{frame}
      	\frametitle{Data}
+     	
      	\begin{itemize}
-     		\item Los datos son oraciones en español e inglés presentes en la data de ehealthkd2021. Esta base de datos contiene información médica relevante, como informes de pacientes, notas clínicas y registros médicos, en ambos idiomas.
+     		\item  A corpus to support eHealth Knowledge Discovery technologies, Piad,Yoan Gutiérrez y Rafael Muñoz.
+     		\item multidominio y multilingüe.
+     		\item Todas las oraciones est\'an relacionadas con temas de salud, mostrando gran variedad en t\'erminos de formato y etructura.
+     		\item Las oraciones es\'an etiquetadas, se conoce el dominio y el idioma correspondiente.
+     		\item training, tenemos un total de 1400 oraciones, de ellas hay 1200 español y 200 en inglés.
+     		\item test, tenemos un total de 100 oraciones, 75 en español y 25 en inglés.
+     		\item entidades 0.39 y relaciones 0.58
+     		
      		
      	\end{itemize}
+     	
+     	 
+     	
      
      	
      \end{frame}
@@ -209,6 +220,42 @@ aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which match
  	\end{frame}
 	
 	%------------------------------------------------
+	\section{Mediciones}
+	\begin{frame}
+		\frametitle{Mediciones para NER + RE}
+		
+				\begin{figure}[h!]
+					\centering
+					%\caption{}
+					\includegraphics[scale=0.5]{../images/escenario_1}
+			 		%\label{fig}
+				\end{figure} 	
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Mediciones para NER}
+		
+		\begin{figure}[h!]
+			\centering
+			%\caption{}
+			\includegraphics[scale=0.5]{../images/escenario_2}
+			%\label{fig}
+		\end{figure} 	
+		
+	\end{frame}
+
+		\begin{frame}
+		\frametitle{Mediciones para RE}
+		
+		\begin{figure}[h!]
+			\centering
+			%\caption{}
+			\includegraphics[scale=0.5]{../images/escenario_3}
+			%\label{fig}
+		\end{figure} 	
+		
+	\end{frame}
 	%------------------------------------------------
 	\section{Modelos}
 	
@@ -252,7 +299,7 @@ aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which match
 	
 	%------------------------------------------------
 	\begin{frame}
-		\frametitle{T5 (Text-To-Text Transfer Transformer))}
+		\frametitle{T5 (Text-To-Text Transfer Transformer)}
 		\begin{block}{Definici\'on}
 			Es un modelo de lenguaje basado en la arquitectura Transformer y diseñado específicamente para la transferencia de texto a texto, lo que significa que puede abordar una amplia gama de tareas de procesamiento del lenguaje natural (NLP) mediante la formulación de la entrada y la salida en un formato de texto a texto.
 		\end{block}
