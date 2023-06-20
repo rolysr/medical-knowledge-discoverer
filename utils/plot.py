@@ -21,13 +21,13 @@ import numpy as np
 
 # NER + RE
 
-labels = ['LSTM', 'GPT3']
-values = [0.33343789209535757, 0.23617339312406577]
+labels = ['LSTM', 'GPT3', 'LSTM + T5']
+values = [0.33343789209535757, 0.23617339312406577, 0.6327014218009479]
 indices = np.arange(len(labels))
 x_label = 'Modelos'
 y_label = 'Medida F1'
 
-colores = ['salmon', 'palevioletred']
+colores = ['salmon', 'palevioletred', 'orange']
 
 
 
