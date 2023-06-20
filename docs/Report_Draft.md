@@ -34,7 +34,18 @@ Además de eHealth-KD, existen otras bases de datos relevantes como SemEval, Bio
 
 En resumen, el estado del arte en la extracción de entidades y relaciones de textos médicos está dominado por los enfoques de aprendizaje profundo, con modelos como BiLSTM y BERT que ofrecen un rendimiento superior. Sin embargo, la elección del modelo adecuado puede depender del contexto específico y del conjunto de datos disponibles, y la investigación en este campo sigue siendo un área activa y en evolución.
 
-## Preliminares:
+## Dataset:
+El dataset utilizado en nuestro proyecto se basó en el corpus (AGREGAR REFERENCIA!!). Este dataset tiene las siguientes características:
+
+- Es multidominio y multilingüe, lo que significa que abarca una variedad de temas relacionados con la salud y contiene oraciones en diferentes idiomas.
+- Todas las oraciones del dataset están relacionadas con temas de salud, lo que proporciona una gran variedad en términos de formato y estructura.
+- Cada oración del dataset está etiquetada, lo que significa que se conoce el dominio al que pertenece y el idioma correspondiente.
+- En el conjunto de entrenamiento, se tienen un total de 1400 oraciones, de las cuales 1200 están en español y 200 en inglés.
+- En el conjunto de pruebas, se tienen un total de 100 oraciones, de las cuales 75 están en español y 25 en inglés.
+- Para evaluar la extracción de entidades, se utilizó un coeficiente de Gini de 0.39, lo que indica un rendimiento moderado en esta tarea.
+- Para evaluar la extracción de relaciones, se utilizó un coeficiente de Gini de 0.58, lo que indica un rendimiento más alto en esta tarea.
+
+Este dataset proporciona una base sólida para el entrenamiento y evaluación de modelos de extracción de conocimiento en el campo de la salud, con una variedad de oraciones etiquetadas en diferentes idiomas y dominios.
 
 ## Propuestas:
 
@@ -157,7 +168,7 @@ En esta imagen podemos ver los resultado obtenidos al realizar la consulta para 
 ![](images/imageconsulta.png)
 
 ## Resultados:
-(HACER LAS TABLITAS DE CADA MODELO Y MOSTRAR LOS MISMOS GRAFICOS QUE EN LA PRESENTACION)
+(HACER LAS TABLITAS DE CADA MODELO PARA TODAS LAS METRICAS DADAS Y MOSTRAR LOS MISMOS GRAFICOS QUE EN LA PRESENTACION)
 
 ## Conclusiones:
 En conclusión, los resultados de nuestras experimentaciones demostraron la efectividad de los modelos de aprendizaje profundo, específicamente BiLSTM y T5, en la tarea de extracción de conocimiento a partir de textos médicos. En la tarea de extracción de entidades nombradas (NER), el modelo BiLSTM sobresalió con un puntaje F1 de 0.56, demostrando su habilidad para capturar y utilizar la información contextual en la identificación de entidades en el texto.
