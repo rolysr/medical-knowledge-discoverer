@@ -102,7 +102,13 @@ El desafío de Extracción de Conocimiento en Documentos Médicos (eHealth-KD) b
 
 El modelo T5 (Text-to-Text Transfer Transformer) es una variante del modelo Transformer que se entrenó para convertir texto en texto. Esta configuración generalizada permite que el modelo se aplique a una variedad de tareas, simplemente cambiando el formato del texto de entrada y salida.
 
-Para abordar la tarea de Extracción de Relaciones, decidimos entrenar el modelo T5 de una forma específica. Dada una oración, generamos un conjunto de oraciones de entrenamiento. Para cada par de entidades posible en la oración, proporcionamos al modelo T5 la oración con el par marcado, y la salida es el tipo de relación. De esta manera, el modelo es entrenado para predecir el tipo de relación entre dos entidades dadas, basándose en el contexto de la oración.
+En un inicio de la tarea de RE el modelo realizaba un entrenamiento supervisado en el que se le pasaba las entidades y el tipo de relación que existía entre ellas. Pero este enfoque en en entrenamiento no dió los resultados esperados, pues en dependencia del contexto de la oración podría cambiar el tipo de relación entre las entidades.
+
+Para solucionar este problema se decidió cambiar el tipo de entrada del modelo tal que por cada oración se genera un conjunto de oraciones de entrenamiento para cada par de entidades posibles en la oración teniendo estas las entidades marcadas(usa marcas en forma de etiquetas como HTML) y la salida es el tipo de relación. De esta manera, el modelo es entrenado para predecir el tipo de relación entre dos entidades dadas, basándose en el contexto de la oración. Lograndose así un mejor desempeño en la tarea, duplicando la puntuación F1 del modelo.
+
+En este caso se usa la técnica de Transfer Learning para entrenar nuestro modelo usando el modelo pre-entrenado "t5-base", el segundo de 5 en la escala de tamaño de los modelos T5. Además se realizan 4 epochs de entrenamiento, en los cuales se mostraba una mejora de los resultados, pero no se siguió probando en adelante debido a falta de poder de computo y lo costoso que es el entrenamiento en cuanto a tiempo.
+
+Se puede encontrar el pipeline de la propuesta de solución en el archivo `pipeline_lstm_NER_T5_RE.ipynb`.
 
 ### Ontología:
 
