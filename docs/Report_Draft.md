@@ -30,7 +30,9 @@ Para la tarea de Extracción de Relaciones (RE), los modelos basados en Transfor
 
 En cuanto a los conjuntos de datos para la evaluación de estas tareas, se han utilizado varios corpus en la literatura. Un ejemplo notorio es el corpus eHealth-KD, que proporciona un conjunto de datos anotados en el dominio de la salud. Este conjunto de datos incluye entidades y relaciones etiquetadas, y ha sido utilizado en varias competencias científicas para evaluar el rendimiento de diferentes enfoques para las tareas de NER y RE.
 
-Además de eHealth-KD, existen otras bases de datos relevantes como SemEval, BioNLP, i2b2, y MIMIC-III, que son ampliamente utilizadas en el campo del procesamiento de texto biomédico y médico. Estos conjuntos de datos, que varían en tamaño, complejidad y enfoque, proporcionan una amplia gama de contextos para probar y evaluar métodos de NER y RE.
+Además de eHealth-KD, existen otras bases de datos relevantes como SemEval, BioNLP, i2b2, y MIMIC-III, que son ampliamente utilizadas en el campo del procesamiento de texto biomédico y médico. Estos conjuntos de datos, que varían en tamaño, complejidad y enfoque, proporcionan una amplia gama de contextos para probar y evaluar métodos de NER y RE. 
+
+ Las ontologías se han utilizado para representar y codificar el conocimiento en un formato semántico que es fácilmente procesable por los sistemas de lenguaje natural. La combinación de ontologías y modelos de lenguaje ha demostrado ser una estrategia efectiva para la extracción de conocimientos en textos médicos. Los modelos de lenguaje pueden utilizarse para identificar entidades y relaciones en el texto, mientras que las ontologías pueden utilizarse para representar y estructurar el conocimiento extraído. Las principales bases de datos usadas, para este tipo de tarea son: Neo4j, OrientDB y ArangoDB, siendo Neo4j una de las más utilizadas, por su facilidad, visualización y manejo de los datos.
 
 En resumen, el estado del arte en la extracción de entidades y relaciones de textos médicos está dominado por los enfoques de aprendizaje profundo, con modelos como BiLSTM y BERT que ofrecen un rendimiento superior. Sin embargo, la elección del modelo adecuado puede depender del contexto específico y del conjunto de datos disponibles, y la investigación en este campo sigue siendo un área activa y en evolución.
 
@@ -116,7 +118,7 @@ En nuestro proyecto una vez obtenido todo el conociemto de los documentos guarda
 
 Una base de datos orientada a grafos (BDOG) representa la información como nodos de un grafo y sus relaciones con las aristas del mismo, de manera que se pueda usar teoría de grafos para recorrer la base de datos ya que esta puede describir atributos de los nodos (entidades) y las aristas (relaciones).
 
-Para ello utilizamos Neo4j. Neo4j permite acceder a sus datos de diversas formas y usando distintos lenguajes de consulta. En nuestro proyecto utilizamos Cypher, un lenguaje que permite consultar y manipular grafos.
+Para ello utilizamos Neo4j (https://neo4j.com/). Neo4j permite acceder a sus datos de diversas formas y usando distintos lenguajes de consulta. En nuestro proyecto utilizamos Cypher (https://neo4j.com/developer/cypher/), un lenguaje que permite consultar y manipular grafos.
 
 Cypher es el lenguaje de consulta de gráficos de Neo4j que le permite recuperar datos del gráfico. Es como SQL para gráficos, y se inspiró en SQL, por lo que le permite concentrarse en los datos que desea obtener del gráfico (no en cómo obtenerlos). Es el lenguaje gráfico más fácil de aprender con diferencia debido a su similitud con otros lenguajes y su intuición.
 
@@ -141,6 +143,7 @@ in-context: para indicar un contexto general en el que sucede algo, como un modo
 * target: indica quién recibe el efecto de la acción, como en “[…] afecta [las] ​​vías respiratorias”. Las acciones pueden tener varios sujetos y destinatarios, en cuyo caso la semántica interpretada es que la unión de los sujetos realiza la acción sobre cada uno de los destinatarios.
 * domain: indica la entidad principal sobre la que se aplica el predicado.
 * arg: indica una entidad adicional que especifica un valor para que el predicado tenga sentido. La semántica exacta de este argumento depende de la semántica de la etiqueta del predicado, como en “mayores [de] 60 años”, donde la etiqueta del predicado “mayores” indica que “60 años” es una cantidad que restringe la edad mínima para el predicado sea verdadero.
+
 
 
 La comunicación con la base de datos se realiza en el siguiente método:
@@ -197,6 +200,9 @@ Las siguientes son algunas recomendaciones para futuras investigaciones y mejora
 4. **Explorar técnicas de preprocesamiento de texto avanzadas**: Antes de alimentar el texto a los modelos de aprendizaje profundo, podría ser útil explorar técnicas avanzadas de preprocesamiento de texto, como la lematización, la eliminación de stopwords y la codificación de entidades.
 
 5. **Incorporación de conocimientos del dominio**: En tareas específicas del dominio, como la extracción de conocimientos médicos, la incorporación de conocimientos del dominio puede mejorar el rendimiento del modelo. Futuras investigaciones podrían explorar formas de incorporar conocimientos médicos en los modelos para mejorar la extracción de entidades y relaciones.
+6. **Añadir un preprosecamiento de las entidades y conceptos:** Antes de rellenar la base de datos de neo4j, podría sería 
+útil realizar un procesamiento de los datos obtenidos, para que no existan dos entidades que son iguales, por ejemplo 
+se encuentran escritas de manera diferente(errores ortográficos)
 
 ## Referencias:
 (AGREGAR LAS REFERENCIAS NECESARIAS)
