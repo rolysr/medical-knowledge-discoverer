@@ -4,7 +4,7 @@ El archivo NER_T5_spacy.ipynb presenta la implementación del pipeline propuesto
 
 Para resolver este problema, se divide en dos partes fundamentales:
 
-1- Detección de entidades en una oración: En este paso, se utiliza la potente biblioteca de Python llamada Spacy. Se descargan los módulos necesarios para trabajar con los idiomas inglés y español. Spacy proporciona una lista de términos en la oración junto con sus respectivas clasificaciones. Sin embargo, las clasificaciones predeterminadas de Spacy no coinciden exactamente con las categorías de nuestro modelo (Concepto, Acción, Referencia, Predicado). Por lo tanto, se modificaron las etiquetas de entidad predefinidas en Spacy para asegurar la coherencia con nuestras necesidades.
+1- Detección de entidades en una oración: En este paso, se utiliza la potente biblioteca de Python llamada Spacy. Se descargan los módulos necesarios para trabajar con los idiomas inglés y español. Spacy proporciona una lista de términos en la oración junto con sus respectivas clasificaciones. Sin embargo, las clasificaciones predeterminadas de Spacy no coinciden exactamente con las categorías de nuestro modelo (Concept, Action, Reference, Predicate). Por lo tanto, se tomaron aquellas etiquetas(o combinaciones de estas) de Spacy que, en la mayoría de las veces, coincidían con las de nuestro problema.
 
 2- Clasificación de tipo de entidad: En este segundo paso, se emplea el modelo Transformer (text-to-text) llamado T5, que se entrena con cinco epoch para lograr la capacidad de clasificar las entidades según su tipo.
 
