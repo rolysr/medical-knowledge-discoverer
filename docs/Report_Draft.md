@@ -112,6 +112,37 @@ En este caso se usa la técnica de Transfer Learning para entrenar nuestro model
 
 Se puede encontrar el pipeline de la propuesta de solución en el archivo `pipeline_lstm_NER_T5_RE.ipynb`.
 
+### GPT3:
+GPT-3 (Generative Pre-trained Transformer 3) es uno de los modelos de lenguaje más avanzados desarrollados por OpenAI. Es una red neuronal de última generación que utiliza la arquitectura Transformer para comprender y generar texto de manera efectiva.
+
+Una de las aplicaciones de GPT-3 es la extracción de entidades y relaciones en el texto. El modelo es capaz de analizar y comprender el contenido textual para identificar entidades, como nombres de personas, ubicaciones, organizaciones, fechas, entre otros. Además, puede detectar las relaciones existentes entre estas entidades, permitiendo obtener un mayor contexto y comprensión de la información.
+
+Al utilizar GPT-3 para la extracción de entidades y relaciones, se pueden realizar tareas como el análisis de sentimiento, la clasificación de texto, la resolución de referencias y la identificación de patrones y conexiones en grandes volúmenes de datos.
+
+El uso de GPT-3 como modelo para la extracción de entidades y relaciones proporciona una forma eficiente y precisa de procesar y comprender información textual de manera automatizada. Esto puede tener aplicaciones en campos como la inteligencia artificial, la minería de datos, la asistencia virtual y la generación de respuestas y recomendaciones más precisas en diversas áreas de conocimiento.
+
+Es importante tener en cuenta que, si bien GPT-3 es una herramienta poderosa, su rendimiento puede variar según la calidad y el contexto del texto de entrada. Además, se debe realizar una validación y verificación adicionales para garantizar la exactitud de las entidades y relaciones extraídas.
+
+## Método
+
+La tarea fue abordada utilizando GPT3, el modelo generativo preentrenado de OpenAI, en combinación con LangChain, una herramienta que facilita el procesamiento del lenguaje natural.
+
+GPT3 es una evolución del modelo Transformer, que se basa en la idea de predecir palabras en una secuencia de texto. Aunque GPT3 se ha usado principalmente para generación de texto, también puede ser muy efectivo en tareas de clasificación y etiquetado, como la extracción de entidades nombradas (NER) y la extracción de relaciones (RE).
+
+LangChain, por otro lado, es una herramienta que facilita la interacción con estos modelos de lenguaje, proporcionando una interfaz intuitiva para analizar y manipular texto. Su integración con GPT3 permite aprovechar la capacidad del modelo para reconocer y entender patrones en los datos de texto.
+
+Para la tarea de NER, utilizamos GPT3 para etiquetar las entidades en el texto. Este modelo es capaz de entender el contexto de cada palabra en una secuencia, lo que le permite identificar correctamente las entidades, incluso cuando la misma palabra puede tener diferentes significados en diferentes contextos.
+
+Para la tarea de RE, aplicamos GPT3 de manera similar, pero en este caso, buscamos relaciones entre las entidades identificadas. GPT3 puede identificar estas relaciones gracias a su capacidad para entender la semántica del texto.
+
+#### Implementacion:
+Se implemento una clase denominada GPT3Model donde esta contiene dos metodos fundamentales para, dada una oracion, extraer sus entidades y relaciones. Estos son:
+- _get_keyphrases_from_sentence se encarga de obtener las entidades y sus clasificaciones a partir de una oración proporcionada. Utiliza el enfoque de One Shot Learning, donde se proporciona una oración de ejemplo y el resultado esperado (las entidades y sus clasificaciones). Luego, se define una variable en el prompt del modelo GPT-3 para la oración específica de la cual se desean extraer las entidades. El modelo GPT-3 utiliza esta información y su conocimiento previo para generar una respuesta que contiene las entidades y sus clasificaciones correspondientes a la oración dada. Finalmente, el método procesa la respuesta del modelo y devuelve un diccionario con las entidades como claves y sus clasificaciones como valores.
+
+- _get_relations_from_sentence se encarga de obtener las relaciones y sus clasificaciones a partir de una oración y un conjunto de entidades proporcionadas. También utiliza el enfoque de One Shot Learning, donde se proporciona un ejemplo de oración junto con un grupo de entidades y su lista de relaciones clasificadas correspondientes. Al igual que en el método anterior, se define una variable en el prompt del modelo GPT-3 para la oración específica y las entidades proporcionadas. El modelo GPT-3 utiliza esta información para generar una respuesta que contiene las relaciones y sus clasificaciones correspondientes a la oración y las entidades dadas. El método procesa la respuesta del modelo y devuelve un diccionario con las relaciones, donde cada relación está representada por un par de entidades y su clasificación.
+
+En resumen, estos dos métodos utilizan el enfoque de One Shot Learning para aprovechar los ejemplos proporcionados de oraciones, entidades y relaciones clasificadas. Utilizan el modelo GPT-3 para generar respuestas que contienen las entidades y relaciones correspondientes a la oración y el conjunto de entidades dados. Finalmente, para inferir las entidades y relaciones en un dataset, se itera por cada una de estas ejecutando los metodos anteriormente descritos.
+
 ### Ontología:
 
 En nuestro proyecto una vez obtenido todo el conociemto de los documentos guardamos los datos en una base de datos orientada a grafos.
