@@ -12,22 +12,22 @@ import numpy as np
 
 # RE
 #labels = ['LSTM', 'T5', 'GPT3']
-#values = [0.04381846635367762, 0.6327014218009479, 0.07947019867549668]
+#values = [0.04381846635367762, 0.09699, 0.07947019867549668]
 #indices = np.arange(len(labels))
 #x_label = 'Modelos'
 #y_label = 'Medida F1'
-#
+
 #colores = ['salmon', 'lightskyblue', 'palevioletred']
 
-# NER + RE
+## NER + RE
 
-labels = ['LSTM', 'GPT3', 'LSTM + T5']
-values = [0.33343789209535757, 0.23617339312406577, 0.6327014218009479]
+labels = ['LSTM', 'GPT3']
+values = [0.33343789209535757, 0.23617339312406577]
 indices = np.arange(len(labels))
 x_label = 'Modelos'
 y_label = 'Medida F1'
 
-colores = ['salmon', 'palevioletred', 'orange']
+colores = ['salmon', 'palevioletred']
 
 
 

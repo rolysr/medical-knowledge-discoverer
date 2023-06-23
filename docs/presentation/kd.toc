@@ -1,7 +1,0 @@
-\beamer@sectionintoc {2}{Objetivo}{2}{0}{1}
-\beamer@sectionintoc {3}{Data}{3}{0}{2}
-\beamer@sectionintoc {4}{Tareas}{4}{0}{3}
-\beamer@sectionintoc {5}{Mediciones}{6}{0}{4}
-\beamer@sectionintoc {6}{Modelos}{9}{0}{5}
-\beamer@sectionintoc {7}{Resultados}{13}{0}{6}
-\beamer@sectionintoc {8}{Ontolog\'ias}{16}{0}{7}
